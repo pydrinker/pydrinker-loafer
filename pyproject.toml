@@ -15,13 +15,13 @@ testpaths = ["tests"]
 addopts = "-vv --cov=loafer --cov-report=term-missing"
 
 [tool.poetry]
-name = "olist-loafer"
+name = "pydrinker-loafer"
 version = "3.0.8"
 description = "Asynchronous message dispatcher for concurrent tasks processing"
 license = "MIT"
-authors = ["Olist <developers@olist.com>"]
+authors = ["Rafael Henrique da Silva Correia <rafael@abraseucodigo.com.br>"]
 readme = "README.md"
-repository = "https://github.com/olist/olist-loafer/"
+repository = "https://github.com/pydrinker/pydrinker-loafer/"
 keywords = ["asyncio", "message", "dispatcher", "tasks", "microservices"]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -34,6 +34,7 @@ classifiers = [
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
     "Topic :: System :: Distributed Computing",
 ]
 packages = [
@@ -41,21 +42,18 @@ packages = [
 ]
 
 [tool.poetry.urls]
-"Download" = "https://github.com/olist/olist-loafer/releases"
+"Download" = "https://github.com/pydrinker/pydrinker-loafer/releases"
 
 [tool.poetry.dependencies]
 python = ">=3.7,<3.10"
-aiobotocore = { version = "^1.0.0", extras = ["boto3"] }
 cached-property = "^1.3.0"
 
 [tool.poetry.dev-dependencies]
 asynctest = "*"
-pre-commit = "*"
 codecov = "*"
 pytest = "*"
 pytest-asyncio = "*"
 pytest-cov = "*"
-pytest-deadfixtures = "*"
 
 [build-system]
 requires = ["poetry_core>=1.0.0"]

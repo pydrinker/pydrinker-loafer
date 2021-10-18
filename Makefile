@@ -1,44 +1,32 @@
-.PHONY: clean-pyc
+.PHONY: help
+help:  ## This help
+	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-default: test
+config-repositories:
+	@poetry config repositories.testpypi https://test.pypi.org/legacy/
+	@poetry config repositories.pypi https://upload.pypi.org/legacy/
 
-clean-pyc:
-	@find . -iname '*.py[co]' -delete
+clean-build:
+	@rm -fr build/
+	@rm -fr dist/
+	@rm -fr *.egg-info
+
+clean-eggs:
+	@find . -name '*.egg' -print0|xargs -0 rm -rf --
+	@rm -rf .eggs/
+
+clean: clean-eggs clean-build ## Clean all thrash files (cached, builds .. etc)
+	@find . -iname '*.pyc' -delete
+	@find . -iname '*.pyo' -delete
+	@find . -iname '*~' -delete
+	@find . -iname '*.swp' -delete
 	@find . -iname '__pycache__' -delete
-	@find . -iname '.coverage' -delete
-	@rm -rf htmlcov/
+	@find . -iname '.pytest_cache' -exec rm -rf {} \+
 
-clean-dist:
-	@rm -rf dist/
-	@rm -rf build/
-	@rm -rf *.egg-info
+build:
+	@poetry build
 
-clean: clean-pyc clean-dist
+test-release: clean build config-repositories ## Release package to Test PyPI
+	@poetry publish -r testpypi
 
-test:
-	poetry run pytest -vv tests
 
-test-cov:
-	poetry run pytest -vv --cov=loafer tests
-
-cov:
-	poetry run coverage report -m
-
-cov-report:
-	poetry run pytest -vv --cov=loafer --cov-report=html tests
-
-check-fixtures:
-	poetry run pytest --dead-fixtures
-
-dist: clean
-	poetry build
-
-release: dist
-	git tag `poetry version -s`
-	git push origin `poetry version -s`
-	poetry publish
-
-changelog-preview:
-	@echo "\nmain ("$$(date '+%Y-%m-%d')")"
-	@echo "-------------------\n"
-	@git log $$(poetry version -s)...main --oneline --reverse
