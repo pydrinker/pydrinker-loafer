@@ -1,9 +1,4 @@
 Thanks to:
 ----------
 
-* allisson <allisson@olist.com>
-* cleberzavadniak <cleber.zavadniak@olist.com>
-* danilo shiga <danilo.shiga@olist.com>
-* lamenezes <luiz.menezes@olist.com>
-* luizdepra <luiz.pra@olist.com>
-* wiliamsouza <wiliamsouza83@gmail.com>
+All contributors of [olist-loafer](https://github.com/olist/olist-loafer/) and [loafer](https://github.com/georgeyk/loafer/) project.
