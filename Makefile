@@ -29,4 +29,6 @@ build:
 test-release: clean build config-repositories ## Release package to Test PyPI
 	@poetry publish -r testpypi
 
+stable-release: clean build config-repositories ## Release package to Test PyPI
+	@poetry publish -r pypi
 
