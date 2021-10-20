@@ -16,7 +16,7 @@ addopts = "-vv --cov=loafer --cov-report=term-missing"
 
 [tool.poetry]
 name = "pydrinker-loafer"
-version = "1.0.0"
+version = "1.0.1"
 description = "Asynchronous message dispatcher for concurrent tasks processing"
 license = "MIT"
 authors = ["Rafael Henrique da Silva Correia <rafael@abraseucodigo.com.br>"]
