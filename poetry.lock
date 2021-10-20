@@ -285,7 +285,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.7,<3.10"
-content-hash = "c000f434182149c7936d0021fda622e2134ef1d6e3543d7e040c6f50c4a60fbe"
+content-hash = "c85fed6670af4067da6fb0047720900f3850e1c93205f98aa81b3f547cb44131"
 
 [metadata.files]
 asynctest = [
