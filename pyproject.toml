@@ -24,7 +24,7 @@ readme = "README.md"
 repository = "https://github.com/pydrinker/pydrinker-loafer/"
 keywords = ["asyncio", "message", "dispatcher", "tasks", "microservices"]
 classifiers = [
-    "Development Status :: 4 - Beta",
+    "Development Status :: 5 - Production/Stable",
     "Environment :: Console",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
@@ -34,7 +34,6 @@ classifiers = [
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
     "Topic :: System :: Distributed Computing",
 ]
 packages = [
