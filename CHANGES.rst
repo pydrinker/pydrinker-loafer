@@ -1,3 +1,9 @@
+1.0.0 (2021-10-20)
+------------------
+
+* First release of forked pydrinker-loafer
+* Removed all old docs and aiobotocore dependencies
+
 3.0.8 (2021-09-27)
 ------------------
 
