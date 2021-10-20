@@ -27,8 +27,12 @@ build:
 	@poetry build
 
 test-release: clean build config-repositories ## Release package to Test PyPI
+	@git tag `poetry version -s`
+	@git push origin `poetry version -s`
 	@poetry publish -r testpypi
 
 stable-release: clean build config-repositories ## Release package to Test PyPI
+	@git tag `poetry version -s`
+	@git push origin `poetry version -s`
 	@poetry publish -r pypi
 
